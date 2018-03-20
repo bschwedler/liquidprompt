@@ -1757,19 +1757,19 @@ _lp_set_prompt()
         LP_K8S=$(kubectl config current-context 2>/dev/null)
         if [[ -n "$LP_K8S" ]]; then
             case $LP_K8S in
-                prod* ) 
+                *prod* ) 
                     LP_K8S=" (${LP_COLOR_KUBERNETES_PROD}${LP_K8S}${NO_COL})"
                     ;;
-                qa )
+                *qa )
                     LP_K8S=" (${LP_COLOR_KUBERNETES_QA}${LP_K8S}${NO_COL})"
                     ;;
-                stag* )
+                *stag* )
                     LP_K8S=" (${LP_COLOR_KUBERNETES_QA}${LP_K8S}${NO_COL})"
                     ;;
-                int* ) 
+                *int* ) 
                     LP_K8S=" (${LP_COLOR_KUBERNETES_QA}${LP_K8S}${NO_COL})"
                     ;;
-                dev* )
+                *dev* )
                     LP_K8S=" (${LP_COLOR_KUBERNETES_DEV}${LP_K8S}${NO_COL})"
                     ;;
                 *) 
